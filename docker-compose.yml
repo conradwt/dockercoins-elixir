@@ -1,0 +1,23 @@
+services:
+  rng:
+    build: rng-elixir
+    ports:
+      - '8001:80'
+
+  hasher:
+    build: hasher-elixir
+    ports:
+      - '8002:80'
+
+  webui:
+    build: webui
+    ports:
+      - '8000:80'
+    volumes:
+      - './webui/files/:/files/'
+
+  redis:
+    image: redis
+
+  worker:
+    build: worker-elixir
