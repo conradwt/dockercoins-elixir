@@ -19,15 +19,15 @@ defmodule RngWeb.ConnCase do
 
   using do
     quote do
+      # The default endpoint for testing
+      @endpoint RngWeb.Endpoint
+
+      use RngWeb, :verified_routes
+
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
       import RngWeb.ConnCase
-
-      alias RngWeb.Router.Helpers, as: Routes
-
-      # The default endpoint for testing
-      @endpoint RngWeb.Endpoint
     end
   end
 

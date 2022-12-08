@@ -13,7 +13,7 @@ config :rng, RngWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "5axoXFE7YV6aZL6L5Xiieypoh2Na84KW5OAjBisWnSF35mQHWXq75aQEdud7c2HF",
+  secret_key_base: "TupBitLd35YoQ/r6/O0quZx7yeanW3G0FOS6BrymGZhknonZSp6l8AkqmCFWSC1L",
   watchers: []
 
 # ## SSL Support
@@ -24,7 +24,6 @@ config :rng, RngWeb.Endpoint,
 #
 #     mix phx.gen.cert
 #
-# Note that this task requires Erlang/OTP 20 or later.
 # Run `mix help phx.gen.cert` for more information.
 #
 # The `http:` config above can be replaced with:
@@ -39,6 +38,9 @@ config :rng, RngWeb.Endpoint,
 # If desired, both `http:` and `https:` keys can be
 # configured to run both http and https servers on
 # different ports.
+
+# Enable dev routes for dashboard and mailbox
+config :rng, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

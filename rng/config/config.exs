@@ -10,9 +10,12 @@ import Config
 # Configures the endpoint
 config :rng, RngWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: RngWeb.ErrorView, accepts: ~w(json), layout: false],
+  render_errors: [
+    formats: [json: RngWeb.ErrorJSON],
+    layout: false
+  ],
   pubsub_server: Rng.PubSub,
-  live_view: [signing_salt: "iqOTB8aI"]
+  live_view: [signing_salt: "vOgFYez3"]
 
 # Configures Elixir's Logger
 config :logger, :console,
