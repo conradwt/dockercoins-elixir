@@ -7,7 +7,8 @@ defmodule HasherWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_hasher_key",
-    signing_salt: "v4w1FZus"
+    signing_salt: "dGF7Mula",
+    same_site: "Lax"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -20,7 +21,7 @@ defmodule HasherWeb.Endpoint do
     at: "/",
     from: :hasher,
     gzip: false,
-    only: ~w(assets fonts images favicon.ico robots.txt)
+    only: HasherWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

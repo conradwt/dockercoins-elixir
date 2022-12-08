@@ -19,15 +19,15 @@ defmodule HasherWeb.ConnCase do
 
   using do
     quote do
+      # The default endpoint for testing
+      @endpoint HasherWeb.Endpoint
+
+      use HasherWeb, :verified_routes
+
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
       import HasherWeb.ConnCase
-
-      alias HasherWeb.Router.Helpers, as: Routes
-
-      # The default endpoint for testing
-      @endpoint HasherWeb.Endpoint
     end
   end
 

@@ -13,7 +13,7 @@ config :hasher, HasherWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "CD8XNvy5YnB12sKHxXWgDopTML5zPmaI+Qi05rpi5S1SlcYk9JC+OeGMZEYQqrb/",
+  secret_key_base: "qKPxRPcpFcZ9l/DMbQ5K+Sw2dj7XfsI64covrTEiTR9Dj9M2y41bURQx1X7C1OhN",
   watchers: []
 
 # ## SSL Support
@@ -24,7 +24,6 @@ config :hasher, HasherWeb.Endpoint,
 #
 #     mix phx.gen.cert
 #
-# Note that this task requires Erlang/OTP 20 or later.
 # Run `mix help phx.gen.cert` for more information.
 #
 # The `http:` config above can be replaced with:
@@ -39,6 +38,9 @@ config :hasher, HasherWeb.Endpoint,
 # If desired, both `http:` and `https:` keys can be
 # configured to run both http and https servers on
 # different ports.
+
+# Enable dev routes for dashboard and mailbox
+config :hasher, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

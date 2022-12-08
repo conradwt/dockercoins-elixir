@@ -1,18 +1,26 @@
 services:
   rng:
-    build: rng-elixir
+    build: rng
     ports:
       - '8001:80'
+    env_file:
+      - rng/.env
 
   hasher:
-    build: hasher-elixir
+    build: hasher
+
     ports:
       - '8002:80'
 
+    env_file:
+      - hasher/.env
+
   webui:
     build: webui
+
     ports:
       - '8000:80'
+
     volumes:
       - './webui/files/:/files/'
 
@@ -20,4 +28,7 @@ services:
     image: redis
 
   worker:
-    build: worker-elixir
+    build: worker
+
+    env_file:
+      - worker/.env

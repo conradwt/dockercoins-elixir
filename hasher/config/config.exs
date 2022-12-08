@@ -10,9 +10,12 @@ import Config
 # Configures the endpoint
 config :hasher, HasherWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: HasherWeb.ErrorView, accepts: ~w(json), layout: false],
+  render_errors: [
+    formats: [json: HasherWeb.ErrorJSON],
+    layout: false
+  ],
   pubsub_server: Hasher.PubSub,
-  live_view: [signing_salt: "P/QfIRKp"]
+  live_view: [signing_salt: "AfUEdIsI"]
 
 # Configures Elixir's Logger
 config :logger, :console,
