@@ -1,8 +1,10 @@
 services:
   rng:
     build: rng
+    
     ports:
       - '8001:80'
+
     env_file:
       - rng/.env
 
@@ -29,6 +31,3 @@ services:
 
   worker:
     build: worker
-
-    env_file:
-      - worker/.env
