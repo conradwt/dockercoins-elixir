@@ -1,8 +1,13 @@
 services:
   rng:
     build: rng-elixir
+
     ports:
       - '8001:80'
+
+    env_file:
+      - rng/.env
+
     logging:
       driver: gelf
       options:
@@ -10,8 +15,13 @@ services:
 
   hasher:
     build: hasher-elixir
+
     ports:
       - '8002:80'
+
+    env_file:
+      - hasher/.env
+
     logging:
       driver: gelf
       options:
@@ -19,10 +29,13 @@ services:
 
   webui:
     build: webui
+
     ports:
       - '8000:80'
+
     volumes:
       - './webui/files/:/files/'
+
     logging:
       driver: gelf
       options:
@@ -30,6 +43,7 @@ services:
 
   redis:
     image: redis
+
     logging:
       driver: gelf
       options:
@@ -37,6 +51,7 @@ services:
 
   worker:
     build: worker-elixir
+
     logging:
       driver: gelf
       options:
