@@ -1,21 +1,34 @@
 services:
   rng:
     build: rng-elixir
+
     image: ${REGISTRY_SLASH}rng${COLON_TAG}
+
     ports:
       - '8001:80'
 
+    env_file:
+      - rng/.env
+
   hasher:
     build: hasher-elixir
+
     image: ${REGISTRY_SLASH}hasher${COLON_TAG}
+
     ports:
       - '8002:80'
+    
+    env_file:
+      - hasher/.env
 
   webui:
     build: webui
+
     image: ${REGISTRY_SLASH}webui${COLON_TAG}
+
     ports:
       - '8000:80'
+
     volumes:
       - './webui/files/:/files/'
 
@@ -24,4 +37,5 @@ services:
 
   worker:
     build: worker-elixir
+
     image: ${REGISTRY_SLASH}worker${COLON_TAG}
