@@ -1,3 +1,4 @@
 # Exclude VSCode artifacts
 .metals/
 .vscode/
+webui/
